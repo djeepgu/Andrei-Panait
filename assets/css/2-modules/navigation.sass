@@ -1,0 +1,54 @@
+.nav
+  background-color: rgba(white, 0.5)
+  position: fixed
+  right: 0
+  top: 0
+  border-bottom-left-radius: 5px
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+
+  .nav-wrap
+    width: 0
+    height: 28px
+    opacity: 0
+    transition: width 250ms ease-in-out
+    ul
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-between
+      list-style-type: none
+      padding: 0
+      margin: 0
+      //display: none
+      opacity: 0
+      pointer-events: none
+      //transition-delay: 500ms
+      //transition: opacity 250ms ease-in-out
+      li
+        padding: 5px 10px
+
+
+  label
+    height: 24px
+    font-size: 24px
+    line-height: 1
+    margin: 4px 4px 0 4px
+    cursor: pointer
+
+#nav-toggler
+  display: none
+  &:checked + .nav
+
+    .nav-wrap
+      width: 560px
+      opacity: 1
+      ul
+        pointer-events: all
+        opacity: 1
+        transition: opacity 250ms ease-in-out
+        transition-delay: 250ms

@@ -1,0 +1,44 @@
+// Mobile-first
+
+@mixin minw($pixels)
+  @media (min-width: $pixels/16+em)
+    @content
+
+// Desktop-first
+
+@mixin maxw($pixels)
+  @media (max-width: $pixels/16+em)
+    @content
+
+// Hero
+
+@mixin hero
+  width: 100vw
+  height: 55vh
+  .personal-details
+    position: relative
+    top: 7vh
+    .my-head
+      opacity: 1
+      margin: 0 auto
+      +size(175px)
+      border-radius: 100%
+      margin-bottom: 50px
+      a
+        display: block
+        width: inherit
+        height: inherit
+        border-radius: 100%
+    .description
+      //padding: 10px
+      width: 100vw
+      margin: auto
+      line-height: 1.3
+      background-color: rgba(255, 255, 255, 0.4)
+      text-align: center
+      .container
+        width: 30%
+        margin: auto
+        h3
+          letter-spacing: 1.8px
+          padding: 20px 0
