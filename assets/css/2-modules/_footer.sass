@@ -1,0 +1,63 @@
+.footer
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  position: relative
+  bottom: 0
+  height: 32px
+  width: 100%
+  .platforms, .credits, .copyright
+    display: inline-block
+    text-align: center
+    width: 32%
+    background-color: $transparent8
+    border-top-left-radius: 8px
+    border-top-right-radius: 8px
+
+  .platforms
+    ul
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      text-align: center
+      justify-content: flex-start
+      padding: 0
+      margin: 0
+      //margin: 0
+      list-style: none
+      a
+        .github, .linkedin, .soundcloud, .mixcloud, .spotify
+          display: inline-block
+          margin-top: 4px
+          padding: 0 5px
+          svg
+            display: inline-block
+
+          p
+            display: none
+            margin: 0
+            padding: 0
+          &:hover
+            svg
+              path
+                fill: $rebecca
+              polygon
+                fill: $rebecca
+            p
+              display: inline-block
+              color: $rebecca
+
+  .credits
+    cursor: pointer
+    a, p
+      display: block
+      margin: 10px 0 0 0
+      font-size: 16px
+
+  .copyright
+    text-align: right
+    p
+      display: block
+      margin: 10px 5px 0 0
+      font-size: 16px
+      //line-height: 18px

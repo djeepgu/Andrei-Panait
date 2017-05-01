@@ -1,0 +1,90 @@
+#music
+  background: url("/assets/img/267H.jpg") no-repeat center center fixed
+  background-size: cover
+  .hero
+    @include hero
+    .personal-details
+      .my-head
+        background: url("/assets/img/headMusic1.jpg") no-repeat center center
+        background-size: cover
+
+  .embedded-platforms
+    max-width: 98%
+    margin: 0 auto 10px auto
+    height: auto
+    min-height: calc(50vh - 52px)
+    margin-bottom: 10px
+    transition: max-width 300ms ease-in
+
+    .soundcloud, .mixcloud, .spotify
+      max-width: 40%
+      transition: max-width 300ms ease-in
+      margin: 0 auto
+      background-color: $transparent8
+      border-radius: 8px
+      cursor: pointer
+      &:hover
+        color: $seance
+
+      .content
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        flex-wrap: wrap
+        align-items: center
+        max-height: 0px
+        pointer-events: none
+        transition: all 300ms ease-in
+
+        iframe
+          opacity: 0
+          display: none
+          padding: 1%
+      .open-content
+        transition: max-height 300ms ease-in
+        max-height: 1000px
+        iframe
+          display: block
+      .show-content
+        pointer-events: all
+        iframe
+          transition: opacity 300ms ease-in
+          opacity: 1
+      .hide-content
+        transition: max-height 300ms ease-in
+        max-height: 0px
+        iframe
+          transition: opacity 200ms ease-in
+          opacity: 0
+
+      .close-content
+        iframe
+          display: none
+
+      h2
+        padding: 10px 0 0 10px
+        margin: 10px 0 0 0
+        span
+          display: inline-block
+          transition: transform 250ms ease-in
+          transform: rotate(0deg)
+      p
+        margin: 0
+        padding: 5px 0 10px 10px
+
+    .open
+      transition: max-width 300ms ease-in
+      max-width: 98%
+      h2
+        span
+          transform: rotate(90deg)
+          transition: transform 250ms ease-in
+
+
+    .mixcloud
+      iframe
+        min-width: 500px
+
+  .ep-large
+    max-width: 98%
+    transition: max-width 500ms ease-in

@@ -13,8 +13,8 @@
 // Hero
 
 @mixin hero
-  width: 100vw
-  height: 55vh
+  width: 100%
+  height: 50vh
   .personal-details
     position: relative
     top: 7vh
@@ -34,11 +34,43 @@
       width: 100vw
       margin: auto
       line-height: 1.3
-      background-color: rgba(255, 255, 255, 0.4)
+      background-color: rgba(255, 255, 255, 0.7)
       text-align: center
       .container
-        width: 30%
+        width: 50%
+        max-width: 640px
         margin: auto
         h3
           letter-spacing: 1.8px
           padding: 20px 0
+        h1
+          letter-spacing: 1.8px
+          padding: 20px 0
+
+
+@mixin credits-popup
+  .credits-popup
+    position: absolute
+    bottom: 40px
+    left: 50%
+    background-color: $transparent8
+    text-align: center
+    border-radius: 8px
+    padding: 8px
+    opacity: 0
+    pointer-events: none
+    line-height: 24px
+
+  .popin
+    pointer-events: all
+    animation-name: in
+    animation-duration: 300ms
+    animation-fill-mode: forwards
+    animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43)
+
+  .popout
+    animation-name: out
+    animation-duration: 300ms
+    animation-fill-mode: forwards
+    animation-timing-function: cubic-bezier(0.51,-0.8, 0.17, 0.97)
+    pointer-events: none
