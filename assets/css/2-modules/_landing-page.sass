@@ -1,5 +1,5 @@
 #home-page
-  background: url("/assets/img/landHero.jpg") no-repeat center center fixed
+  background: url("/assets/img/homeBack1920.jpg") no-repeat center center fixed
   background-size: cover
   .hero
     @include hero
@@ -7,21 +7,25 @@
       .my-head
         background: url("/assets/img/headLand.jpg") no-repeat center center
         background-size: cover
-        opacity: 0.8
+        opacity: 0.7
+
 
   .sections
+    position: relative
     display: flex
     flex-direction: row
     flex-wrap: wrap
     text-align: center
-    justify-content: space-around
+    justify-content: space-between
     padding: 0
-    margin: 0
-    height: calc(50vh - 33px)
+    margin: 0 auto
+    min-height: calc(100vh - 482px)
+    width: 98%
     .development, .music, .tech, .volley
       background-color: $transparent8
       border-radius: 8px
       width: 24%
+      min-width: 242px
       height: 57px
 
 

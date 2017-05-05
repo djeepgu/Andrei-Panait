@@ -13,44 +13,50 @@
 // Hero
 
 @mixin hero
-  width: 100%
-  height: 50vh
+  position: relative
+  height: 450px
   .personal-details
     position: relative
-    top: 7vh
+    top: 50px
     .my-head
       opacity: 1
       margin: 0 auto
-      +size(175px)
+      +size(200px)
       border-radius: 100%
       margin-bottom: 50px
-      a
-        display: block
-        width: inherit
-        height: inherit
-        border-radius: 100%
+      
     .description
-      //padding: 10px
-      width: 100vw
+      border-radius: 8px
+      width: 98%
       margin: auto
       line-height: 1.3
-      background-color: rgba(255, 255, 255, 0.7)
+      background-color: $transparent8
       text-align: center
       .container
         width: 50%
         max-width: 640px
         margin: auto
         h3
+          margin: 0
           letter-spacing: 1.8px
           padding: 20px 0
         h1
           letter-spacing: 1.8px
           padding: 20px 0
-
+  @include maxw(1280)
+    .personal-details
+      top: 30px
+      .my-head
+        +size(160px)
+        margin-bottom: 25px
+      .description
+        .container
+          width: 90%
+          max-width: 960px
 
 @mixin credits-popup
   .credits-popup
-    position: absolute
+    position: fixed
     bottom: 40px
     left: 50%
     background-color: $transparent8
@@ -74,3 +80,9 @@
     animation-fill-mode: forwards
     animation-timing-function: cubic-bezier(0.51,-0.8, 0.17, 0.97)
     pointer-events: none
+
+@mixin container-style
+  background-color: $transparent8
+  width: 98%
+  border-radius: 8px
+  margin: 0 auto

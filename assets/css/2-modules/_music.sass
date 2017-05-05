@@ -1,5 +1,5 @@
 #music
-  background: url("/assets/img/267H.jpg") no-repeat center center fixed
+  background: url("/assets/img/musicBack1920.jpg") no-repeat center center fixed
   background-size: cover
   .hero
     @include hero
@@ -9,10 +9,10 @@
         background-size: cover
 
   .embedded-platforms
+    position: relative
     max-width: 98%
-    margin: 0 auto 10px auto
-    height: auto
-    min-height: calc(50vh - 52px)
+    margin: 50px auto 10px auto
+    min-height: calc(100vh - 542px)
     margin-bottom: 10px
     transition: max-width 300ms ease-in
 
@@ -40,24 +40,30 @@
           opacity: 0
           display: none
           padding: 1%
+
       .open-content
         transition: max-height 300ms ease-in
         max-height: 1000px
         iframe
           display: block
+
       .show-content
         pointer-events: all
         iframe
           transition: opacity 300ms ease-in
           opacity: 1
+
       .hide-content
-        transition: max-height 300ms ease-in
-        max-height: 0px
+        pointer-events: none
         iframe
           transition: opacity 200ms ease-in
           opacity: 0
+        transition: max-height 400ms ease-in
+        max-height: 0px
+
 
       .close-content
+
         iframe
           display: none
 
@@ -74,7 +80,7 @@
 
     .open
       transition: max-width 300ms ease-in
-      max-width: 98%
+      max-width: 100%
       h2
         span
           transform: rotate(90deg)
@@ -85,6 +91,8 @@
       iframe
         min-width: 500px
 
-  .ep-large
+  //.ep-large
     max-width: 98%
     transition: max-width 500ms ease-in
+
+  @include credits-popup

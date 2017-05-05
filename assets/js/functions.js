@@ -38,10 +38,12 @@ $( document ).ready(function() {
       $(that).children(".content").addClass("hide-content");
       setTimeout(function(){
         $(that).children(".content").addClass("close-content");
+      }, 400);
+      setTimeout(function(){
         $(that).children(".content").removeClass("show-content");
         $(that).children(".content").removeClass("open-content");
         $(that).removeClass("open");
-      }, 500);
+      }, 600);
 
     }
 
@@ -115,5 +117,5 @@ $( document ).ready(function() {
   });
 
   //
-  
+
 });

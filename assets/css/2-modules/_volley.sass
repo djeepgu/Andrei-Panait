@@ -1,13 +1,34 @@
 #volley
-  background: url("/assets/img/volley1.jpeg") no-repeat center center fixed
+  background: url("/assets/img/volleyBack1920.jpg") no-repeat center center fixed
   background-size: cover
   .hero
     @include hero
     .personal-details
+      max-width: 800px
+      margin: 0 auto
       .my-head
         background: url("/assets/img/spuyt.png") no-repeat center center
         background-size: cover
         opacity: 1
 
+  .spuyt, .competitions
+    max-width: 800px
+    @include container-style
+    margin: 50px auto 20px auto
+    h3, p, h4
+      text-align: center
+      padding: 20px
+      margin: 0
+
+  .history
+    margin: auto
+    max-width: 640px
+
+  .competitions .container
+
+    p
+      max-width: 640px
+      margin: 0 auto
+      padding-top: 0
 
   @include credits-popup

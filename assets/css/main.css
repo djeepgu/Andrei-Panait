@@ -453,11 +453,12 @@ template {
 html {
   font-family: 'Josefin Sans';
   -webkit-font-smoothing: antialiased;
-  font-weight: bold;
   background-color: white;
   color: #663399; }
   html ::-webkit-scrollbar {
     display: none; }
+  html .page-wrap {
+    height: 100vh; }
 
 a {
   color: #663399; }
@@ -465,49 +466,57 @@ a {
     color: #9A12B3; }
 
 #home-page {
-  background: url("/assets/img/landHero.jpg") no-repeat center center fixed;
+  background: url("/assets/img/homeBack1920.jpg") no-repeat center center fixed;
   background-size: cover; }
   #home-page .hero {
-    width: 100%;
-    height: 50vh; }
+    position: relative;
+    height: 450px; }
     #home-page .hero .personal-details {
       position: relative;
-      top: 7vh; }
+      top: 50px; }
       #home-page .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
-        height: 175px;
-        width: 175px;
+        height: 200px;
+        width: 200px;
         -webkit-border-radius: 100%;
                 border-radius: 100%;
         margin-bottom: 50px; }
-        #home-page .hero .personal-details .my-head a {
-          display: block;
-          width: inherit;
-          height: inherit;
-          -webkit-border-radius: 100%;
-                  border-radius: 100%; }
       #home-page .hero .personal-details .description {
-        width: 100vw;
+        -webkit-border-radius: 8px;
+                border-radius: 8px;
+        width: 98%;
         margin: auto;
         line-height: 1.3;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #home-page .hero .personal-details .description .container {
           width: 50%;
           max-width: 640px;
           margin: auto; }
           #home-page .hero .personal-details .description .container h3 {
+            margin: 0;
             letter-spacing: 1.8px;
             padding: 20px 0; }
           #home-page .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
+    @media (max-width: 80em) {
+      #home-page .hero .personal-details {
+        top: 30px; }
+        #home-page .hero .personal-details .my-head {
+          height: 160px;
+          width: 160px;
+          margin-bottom: 25px; }
+        #home-page .hero .personal-details .description .container {
+          width: 90%;
+          max-width: 960px; } }
     #home-page .hero .personal-details .my-head {
       background: url("/assets/img/headLand.jpg") no-repeat center center;
       background-size: cover;
-      opacity: 0.8; }
+      opacity: 0.7; }
   #home-page .sections {
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -521,18 +530,21 @@ a {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     text-align: center;
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0;
-    margin: 0;
-    height: -webkit-calc(50vh - 33px);
-    height: calc(50vh - 33px); }
+    margin: 0 auto;
+    min-height: -webkit-calc(100vh - 482px);
+    min-height: calc(100vh - 482px);
+    width: 98%; }
     #home-page .sections .development, #home-page .sections .music, #home-page .sections .tech, #home-page .sections .volley {
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.8);
       -webkit-border-radius: 8px;
               border-radius: 8px;
       width: 24%;
+      min-width: 242px;
       height: 57px; }
       #home-page .sections .development h4, #home-page .sections .music h4, #home-page .sections .tech h4, #home-page .sections .volley h4 {
         font-size: 1.5em;
@@ -555,7 +567,7 @@ a {
                   animation-timing-function: ease-in;
           -webkit-animation-fill-mode: forwards;
                   animation-fill-mode: forwards;
-          background-color: rgba(255, 255, 255, 0.7);
+          background-color: rgba(255, 255, 255, 0.8);
           display: none;
           padding: 7px; }
           #home-page .sections .development ul li:nth-last-child(1), #home-page .sections .music ul li:nth-last-child(1), #home-page .sections .tech ul li:nth-last-child(1), #home-page .sections .volley ul li:nth-last-child(1) {
@@ -608,10 +620,10 @@ a {
   100% {
     opacity: 0; } }
   #home-page .credits-popup {
-    position: absolute;
+    position: fixed;
     bottom: 40px;
     left: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     -webkit-border-radius: 8px;
             border-radius: 8px;
@@ -641,13 +653,14 @@ a {
     pointer-events: none; }
 
 .nav {
+  font-weight: bold;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
-  right: 0;
-  top: 0;
-  -webkit-border-bottom-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+  right: 20px;
+  top: 20px;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -724,50 +737,58 @@ a {
               transition-delay: 250ms; }
 
 #developer {
-  background: url("/assets/img/346H.jpg") no-repeat center center fixed;
+  background: url("/assets/img/developerBack1920.jpg") no-repeat center center fixed;
   background-size: cover; }
-  #developer ::-webkit-scrollbar {
-    display: none; }
+  #developer body {
+    position: relative; }
   #developer .hero {
-    width: 100%;
-    height: 50vh; }
+    position: relative;
+    height: 450px; }
     #developer .hero .personal-details {
       position: relative;
-      top: 7vh; }
+      top: 50px; }
       #developer .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
-        height: 175px;
-        width: 175px;
+        height: 200px;
+        width: 200px;
         -webkit-border-radius: 100%;
                 border-radius: 100%;
         margin-bottom: 50px; }
-        #developer .hero .personal-details .my-head a {
-          display: block;
-          width: inherit;
-          height: inherit;
-          -webkit-border-radius: 100%;
-                  border-radius: 100%; }
       #developer .hero .personal-details .description {
-        width: 100vw;
+        -webkit-border-radius: 8px;
+                border-radius: 8px;
+        width: 98%;
         margin: auto;
         line-height: 1.3;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #developer .hero .personal-details .description .container {
           width: 50%;
           max-width: 640px;
           margin: auto; }
           #developer .hero .personal-details .description .container h3 {
+            margin: 0;
             letter-spacing: 1.8px;
             padding: 20px 0; }
           #developer .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
+    @media (max-width: 80em) {
+      #developer .hero .personal-details {
+        top: 30px; }
+        #developer .hero .personal-details .my-head {
+          height: 160px;
+          width: 160px;
+          margin-bottom: 25px; }
+        #developer .hero .personal-details .description .container {
+          width: 90%;
+          max-width: 960px; } }
     #developer .hero .personal-details .my-head {
       background: url("/assets/img/headDev.jpg") no-repeat center center;
       background-size: cover; }
   #developer .sections {
+    position: relative;
     width: 100vw;
     height: 100%; }
     #developer .sections section {
@@ -776,59 +797,100 @@ a {
       max-width: 50%;
       -webkit-border-radius: 8px;
               border-radius: 8px;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.8);
       text-align: center; }
+      #developer .sections section:nth-last-child(1) {
+        margin-bottom: 50px; }
       #developer .sections section h2 {
         padding: 10px auto 15px auto; }
+  #developer .credits-popup {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    padding: 8px;
+    opacity: 0;
+    pointer-events: none;
+    line-height: 24px; }
+  #developer .popin {
+    pointer-events: all;
+    -webkit-animation-name: in;
+            animation-name: in;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43);
+            animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43); }
+  #developer .popout {
+    -webkit-animation-name: out;
+            animation-name: out;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
+            animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
+    pointer-events: none; }
 
 #music {
-  background: url("/assets/img/267H.jpg") no-repeat center center fixed;
+  background: url("/assets/img/musicBack1920.jpg") no-repeat center center fixed;
   background-size: cover; }
   #music .hero {
-    width: 100%;
-    height: 50vh; }
+    position: relative;
+    height: 450px; }
     #music .hero .personal-details {
       position: relative;
-      top: 7vh; }
+      top: 50px; }
       #music .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
-        height: 175px;
-        width: 175px;
+        height: 200px;
+        width: 200px;
         -webkit-border-radius: 100%;
                 border-radius: 100%;
         margin-bottom: 50px; }
-        #music .hero .personal-details .my-head a {
-          display: block;
-          width: inherit;
-          height: inherit;
-          -webkit-border-radius: 100%;
-                  border-radius: 100%; }
       #music .hero .personal-details .description {
-        width: 100vw;
+        -webkit-border-radius: 8px;
+                border-radius: 8px;
+        width: 98%;
         margin: auto;
         line-height: 1.3;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #music .hero .personal-details .description .container {
           width: 50%;
           max-width: 640px;
           margin: auto; }
           #music .hero .personal-details .description .container h3 {
+            margin: 0;
             letter-spacing: 1.8px;
             padding: 20px 0; }
           #music .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
+    @media (max-width: 80em) {
+      #music .hero .personal-details {
+        top: 30px; }
+        #music .hero .personal-details .my-head {
+          height: 160px;
+          width: 160px;
+          margin-bottom: 25px; }
+        #music .hero .personal-details .description .container {
+          width: 90%;
+          max-width: 960px; } }
     #music .hero .personal-details .my-head {
       background: url("/assets/img/headMusic1.jpg") no-repeat center center;
       background-size: cover; }
   #music .embedded-platforms {
+    position: relative;
     max-width: 98%;
-    margin: 0 auto 10px auto;
-    height: auto;
-    min-height: -webkit-calc(50vh - 52px);
-    min-height: calc(50vh - 52px);
+    margin: 50px auto 10px auto;
+    min-height: -webkit-calc(100vh - 542px);
+    min-height: calc(100vh - 542px);
     margin-bottom: 10px;
     -webkit-transition: max-width 300ms ease-in;
     transition: max-width 300ms ease-in; }
@@ -837,7 +899,7 @@ a {
       -webkit-transition: max-width 300ms ease-in;
       transition: max-width 300ms ease-in;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.8);
       -webkit-border-radius: 8px;
               border-radius: 8px;
       cursor: pointer; }
@@ -884,8 +946,9 @@ a {
           transition: opacity 300ms ease-in;
           opacity: 1; }
       #music .embedded-platforms .soundcloud .hide-content, #music .embedded-platforms .mixcloud .hide-content, #music .embedded-platforms .spotify .hide-content {
-        -webkit-transition: max-height 300ms ease-in;
-        transition: max-height 300ms ease-in;
+        pointer-events: none;
+        -webkit-transition: max-height 400ms ease-in;
+        transition: max-height 400ms ease-in;
         max-height: 0px; }
         #music .embedded-platforms .soundcloud .hide-content iframe, #music .embedded-platforms .mixcloud .hide-content iframe, #music .embedded-platforms .spotify .hide-content iframe {
           -webkit-transition: opacity 200ms ease-in;
@@ -911,7 +974,7 @@ a {
     #music .embedded-platforms .open {
       -webkit-transition: max-width 300ms ease-in;
       transition: max-width 300ms ease-in;
-      max-width: 98%; }
+      max-width: 100%; }
       #music .embedded-platforms .open h2 span {
         -webkit-transform: rotate(90deg);
             -ms-transform: rotate(90deg);
@@ -922,102 +985,313 @@ a {
         transition: transform 250ms ease-in, -webkit-transform 250ms ease-in; }
     #music .embedded-platforms .mixcloud iframe {
       min-width: 500px; }
-  #music .ep-large {
-    max-width: 98%;
-    -webkit-transition: max-width 500ms ease-in;
-    transition: max-width 500ms ease-in; }
+  #music .credits-popup {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    padding: 8px;
+    opacity: 0;
+    pointer-events: none;
+    line-height: 24px; }
+  #music .popin {
+    pointer-events: all;
+    -webkit-animation-name: in;
+            animation-name: in;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43);
+            animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43); }
+  #music .popout {
+    -webkit-animation-name: out;
+            animation-name: out;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
+            animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
+    pointer-events: none; }
 
 #science {
-  background: url("/assets/img/sombrero.jpg") no-repeat center center fixed;
+  background: url("/assets/img/scienceBack1920.jpg") no-repeat center center fixed;
   background-size: cover; }
   #science .hero {
-    width: 100%;
-    height: 50vh; }
+    position: relative;
+    height: 450px; }
     #science .hero .personal-details {
       position: relative;
-      top: 7vh; }
+      top: 50px; }
       #science .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
-        height: 175px;
-        width: 175px;
+        height: 200px;
+        width: 200px;
         -webkit-border-radius: 100%;
                 border-radius: 100%;
         margin-bottom: 50px; }
-        #science .hero .personal-details .my-head a {
-          display: block;
-          width: inherit;
-          height: inherit;
-          -webkit-border-radius: 100%;
-                  border-radius: 100%; }
       #science .hero .personal-details .description {
-        width: 100vw;
+        -webkit-border-radius: 8px;
+                border-radius: 8px;
+        width: 98%;
         margin: auto;
         line-height: 1.3;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #science .hero .personal-details .description .container {
           width: 50%;
           max-width: 640px;
           margin: auto; }
           #science .hero .personal-details .description .container h3 {
+            margin: 0;
             letter-spacing: 1.8px;
             padding: 20px 0; }
           #science .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
+    @media (max-width: 80em) {
+      #science .hero .personal-details {
+        top: 30px; }
+        #science .hero .personal-details .my-head {
+          height: 160px;
+          width: 160px;
+          margin-bottom: 25px; }
+        #science .hero .personal-details .description .container {
+          width: 90%;
+          max-width: 960px; } }
     #science .hero .personal-details .my-head {
-      background: url("/assets/img/headMusic.jpg") no-repeat center center;
+      background: url("/assets/img/pillarsOfCreation.jpg") no-repeat center center;
       background-size: cover; }
+  #science .inspiration {
+    width: 98%;
+    margin: 0 auto 10px auto; }
+    #science .inspiration h2 {
+      padding: 10px;
+      margin: 50px auto 20px auto;
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center; }
+    #science .inspiration .container {
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      #science .inspiration .container .tyson, #science .inspiration .container .sagan, #science .inspiration .container .feynman, #science .inspiration .container .elon, #science .inspiration .container .jobs {
+        display: block;
+        width: 20%;
+        padding: 10px; }
+        #science .inspiration .container .tyson h3, #science .inspiration .container .sagan h3, #science .inspiration .container .feynman h3, #science .inspiration .container .elon h3, #science .inspiration .container .jobs h3 {
+          text-align: center; }
+        #science .inspiration .container .tyson p, #science .inspiration .container .sagan p, #science .inspiration .container .feynman p, #science .inspiration .container .elon p, #science .inspiration .container .jobs p {
+          text-align: center; }
+        #science .inspiration .container .tyson .quote, #science .inspiration .container .sagan .quote, #science .inspiration .container .feynman .quote, #science .inspiration .container .elon .quote, #science .inspiration .container .jobs .quote {
+          max-width: 250px;
+          margin: 15px auto 10px auto; }
+        #science .inspiration .container .tyson .pic, #science .inspiration .container .sagan .pic, #science .inspiration .container .feynman .pic, #science .inspiration .container .elon .pic, #science .inspiration .container .jobs .pic {
+          display: block;
+          margin: 0 auto;
+          -webkit-border-radius: 100%;
+                  border-radius: 100%;
+          height: 200px;
+          width: 200px; }
+          @media (max-width: 80em) {
+            #science .inspiration .container .tyson .pic, #science .inspiration .container .sagan .pic, #science .inspiration .container .feynman .pic, #science .inspiration .container .elon .pic, #science .inspiration .container .jobs .pic {
+              height: 150px;
+              width: 150px; } }
+          @media (max-width: 64em) {
+            #science .inspiration .container .tyson .pic, #science .inspiration .container .sagan .pic, #science .inspiration .container .feynman .pic, #science .inspiration .container .elon .pic, #science .inspiration .container .jobs .pic {
+              height: 100px;
+              width: 100px; } }
+  #science .sources {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 98%;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+    max-width: 98%;
+    margin: 50px auto 20px auto; }
+  #science .rss-feeds {
+    position: relative;
+    width: 98%;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    margin: 0 auto;
+    max-height: -webkit-calc(65vh - 96px);
+    max-height: calc(65vh - 96px);
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px; }
+    #science .rss-feeds .rss2html-note {
+      display: none; }
+    #science .rss-feeds .nasa, #science .rss-feeds .wired, #science .rss-feeds .guardian {
+      width: 33%;
+      overflow: scroll;
+      font-size: 1em;
+      padding: 20px;
+      color: black; }
+      #science .rss-feeds .nasa iframe, #science .rss-feeds .wired iframe, #science .rss-feeds .guardian iframe {
+        width: 100%;
+        min-height: 320px; }
+      #science .rss-feeds .nasa img, #science .rss-feeds .wired img, #science .rss-feeds .guardian img {
+        max-width: 100%; }
+      #science .rss-feeds .nasa .title, #science .rss-feeds .wired .title, #science .rss-feeds .guardian .title {
+        color: #663399;
+        text-align: center;
+        margin: 0;
+        border-bottom: 1px solid white; }
+      #science .rss-feeds .nasa .description, #science .rss-feeds .wired .description, #science .rss-feeds .guardian .description {
+        text-align: center;
+        margin: 10px 0 40px 0; }
+      #science .rss-feeds .nasa p, #science .rss-feeds .wired p, #science .rss-feeds .guardian p {
+        color: black; }
+      #science .rss-feeds .nasa .feed-item-title, #science .rss-feeds .wired .feed-item-title, #science .rss-feeds .guardian .feed-item-title {
+        font-size: 20px; }
+    #science .rss-feeds .guardian > a {
+      border-bottom: 1px solid white; }
+  #science .credits-popup {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    padding: 8px;
+    opacity: 0;
+    pointer-events: none;
+    line-height: 24px; }
+  #science .popin {
+    pointer-events: all;
+    -webkit-animation-name: in;
+            animation-name: in;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43);
+            animation-timing-function: cubic-bezier(0.2, 1.18, 0.92, 1.43); }
+  #science .popout {
+    -webkit-animation-name: out;
+            animation-name: out;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
+            animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
+    pointer-events: none; }
 
 #volley {
-  background: url("/assets/img/volley1.jpeg") no-repeat center center fixed;
+  background: url("/assets/img/volleyBack1920.jpg") no-repeat center center fixed;
   background-size: cover; }
   #volley .hero {
-    width: 100%;
-    height: 50vh; }
+    position: relative;
+    height: 450px; }
     #volley .hero .personal-details {
       position: relative;
-      top: 7vh; }
+      top: 50px; }
       #volley .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
-        height: 175px;
-        width: 175px;
+        height: 200px;
+        width: 200px;
         -webkit-border-radius: 100%;
                 border-radius: 100%;
         margin-bottom: 50px; }
-        #volley .hero .personal-details .my-head a {
-          display: block;
-          width: inherit;
-          height: inherit;
-          -webkit-border-radius: 100%;
-                  border-radius: 100%; }
       #volley .hero .personal-details .description {
-        width: 100vw;
+        -webkit-border-radius: 8px;
+                border-radius: 8px;
+        width: 98%;
         margin: auto;
         line-height: 1.3;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #volley .hero .personal-details .description .container {
           width: 50%;
           max-width: 640px;
           margin: auto; }
           #volley .hero .personal-details .description .container h3 {
+            margin: 0;
             letter-spacing: 1.8px;
             padding: 20px 0; }
           #volley .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
-    #volley .hero .personal-details .my-head {
-      background: url("/assets/img/spuyt.png") no-repeat center center;
-      background-size: cover;
-      opacity: 1; }
+    @media (max-width: 80em) {
+      #volley .hero .personal-details {
+        top: 30px; }
+        #volley .hero .personal-details .my-head {
+          height: 160px;
+          width: 160px;
+          margin-bottom: 25px; }
+        #volley .hero .personal-details .description .container {
+          width: 90%;
+          max-width: 960px; } }
+    #volley .hero .personal-details {
+      max-width: 800px;
+      margin: 0 auto; }
+      #volley .hero .personal-details .my-head {
+        background: url("/assets/img/spuyt.png") no-repeat center center;
+        background-size: cover;
+        opacity: 1; }
+  #volley .spuyt, #volley .competitions {
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 98%;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    margin: 0 auto;
+    margin: 50px auto 20px auto; }
+    #volley .spuyt h3, #volley .spuyt p, #volley .spuyt h4, #volley .competitions h3, #volley .competitions p, #volley .competitions h4 {
+      text-align: center;
+      padding: 20px;
+      margin: 0; }
+  #volley .history {
+    margin: auto;
+    max-width: 640px; }
+  #volley .competitions .container p {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-top: 0; }
   #volley .credits-popup {
-    position: absolute;
+    position: fixed;
     bottom: 40px;
     left: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     -webkit-border-radius: 8px;
             border-radius: 8px;
@@ -1047,6 +1321,7 @@ a {
     pointer-events: none; }
 
 .footer {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1056,18 +1331,19 @@ a {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-  position: relative;
-  bottom: 0;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  bottom: 0px;
   height: 32px;
-  width: 100%; }
+  margin: 0 auto;
+  width: 98%; }
   .footer .platforms, .footer .credits, .footer .copyright {
     display: inline-block;
     text-align: center;
     width: 32%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     -webkit-border-top-left-radius: 8px;
             border-top-left-radius: 8px;
     -webkit-border-top-right-radius: 8px;

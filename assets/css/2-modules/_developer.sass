@@ -1,11 +1,9 @@
 #developer
-  ::-webkit-scrollbar
-    display: none
-  background: url("/assets/img/346H.jpg") no-repeat center center fixed
+  background: url("/assets/img/developerBack1920.jpg") no-repeat center center fixed
   background-size: cover
 
   body
-
+    position: relative
 
   .hero
     @include hero
@@ -14,10 +12,10 @@
         background: url("/assets/img/headDev.jpg") no-repeat center center
         background-size: cover
 
-  section
 
 
   .sections
+    position: relative
     width: 100vw
     height: 100%
 
@@ -26,8 +24,11 @@
       padding: 10px
       max-width: 50%
       border-radius: 8px
-      background-color: rgba(white, 0.7)
+      background-color: $transparent8
       text-align: center
-
+      &:nth-last-child(1)
+        margin-bottom: 50px
       h2
         padding: 10px auto 15px auto
+
+  @include credits-popup
