@@ -20,10 +20,10 @@
 
 @mixin hero
   position: relative
-  height: 450px
+  min-height: 450px
   .personal-details
     position: relative
-    top: 50px
+    margin-top: 50px
     .my-head
       opacity: 1
       margin: 0 auto
@@ -34,24 +34,23 @@
     .description
       border-radius: 8px
       width: 98%
+      max-width: 960px
       margin: auto
       line-height: 1.3
       background-color: $transparent8
       text-align: center
       .container
-        width: 50%
-        max-width: 640px
+        padding: 20px
         margin: auto
         h3
           margin: 0
           letter-spacing: 1.8px
-          padding: 20px 0
+          //padding: 20px 0
         h1
           letter-spacing: 1.8px
           padding: 20px 0
   @include maxw(1280)
     .personal-details
-      top: 30px
       .my-head
         +size(160px)
         margin-bottom: 25px
@@ -61,8 +60,15 @@
           max-width: 960px
 
   @include maxh(768)
-    height: 400px
-
+    min-height: 400px
+    .personal-details
+      .my-head
+        +size(160px)
+        margin-bottom: 25px
+      .description
+        .container
+          width: 50%
+          max-width: 960px
 
 
 

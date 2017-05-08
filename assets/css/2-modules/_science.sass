@@ -10,11 +10,12 @@
 
   .inspiration
     width: 98%
+    max-width: 960px
     margin: 0 auto 10px auto
 
     h2
       padding: 10px
-      margin: 50px auto 20px auto
+      margin: 10px auto
       border-radius: 8px
       background-color: $transparent8
       text-align: center
@@ -44,53 +45,50 @@
           display: block
           margin: 0 auto
           border-radius: 100%
-          +size(200px)
-          @include maxw(1280)
-            +size(150px)
-          @include maxw(1024)
-            +size(100px)
+          +size(150px)
+
 
   .sources
     @include container-style
     text-align: center
     padding: 10px 0
-    max-width: 98%
-    margin: 50px auto 20px auto
+    width: 98%
+    max-width: 960px
+    margin: 50px auto 10px auto
 
 
   .rss-feeds
     position: relative
     width: 98%
-    border-radius: 8px
-    margin: 0 auto
-    max-height: calc(65vh - 96px)
-    overflow: hidden
+    max-width: 960px
+    margin: 0 auto 20px auto
+    display: flex
+    flex-direction: column
+    //flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
     .rss2html-note
       display: none
-    display: flex
-    flex-direction: row
-    //flex-wrap: wrap
-    //align-items: stretch
-    justify-content: space-between
-    background-color: $transparent8
-    margin-bottom: 50px
+
     .nasa, .wired, .guardian
-      width: 33%
+      background-color: $transparent8
+      border-radius: 8px
+      width: 100%
+      height: 760px
       overflow: scroll
       font-size: 1em
-      padding: 20px
+      margin-bottom: 10px
+      text-align: center
       color: black
-      iframe
-        width: 100%
-        min-height: 320px
-
-      img
-        max-width: 100%
 
       .title
+        display: block
+
         color: $rebecca
         text-align: center
-        margin: 0
+        margin: 10px
+
         border-bottom: 1px solid white
 
       .description
@@ -99,11 +97,32 @@
 
       p
         color: black
+        padding: 0 20px
 
       .feed-item-title
         font-size: 20px
 
+    .nasa
+      overflow: hidden
+      iframe
+        width: 940px
+        height: 640px
+
+
     .wired
+      overflow: scroll
+      .feed-item-title
+        text-align: center
+      .feed-item-desc
+        text-align: center
+      .rss_thumbnail
+        text-align: center
+
+        img
+          max-width: 100%
+          display: block
+          margin: auto
+
 
     .guardian > a
       border-bottom: 1px solid white

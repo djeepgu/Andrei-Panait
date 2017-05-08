@@ -1,6 +1,13 @@
 #home-page
   background: url("/assets/img/homeBack1920.jpg") no-repeat center center fixed
   background-size: cover
+  @include maxw(1280)
+    background: url("/assets/img/homeBack1280.jpg") no-repeat center center fixed
+    background-size: cover
+  @include maxw(1024)
+    background: url("/assets/img/homeBack1024.jpg") no-repeat center center fixed
+    background-size: cover
+
   .hero
     @include hero
     .personal-details
@@ -8,91 +15,42 @@
         background: url("/assets/img/headLand.jpg") no-repeat center center
         background-size: cover
         opacity: 0.7
-
+    .name
+      background-color: $transparent8
+      width: 98%
+      max-width: 960px
+      margin: 0 auto 30px auto
+      text-align: center
+      border-radius: 8px
+      padding: 10px 0
+      h1
+        margin: 0
 
   .sections
     position: relative
     display: flex
-    flex-direction: row
+    flex-direction: column
     flex-wrap: wrap
-    //align-items: center
-    justify-content: space-between
+    align-items: center
+    justify-content: center
     text-align: center
     padding: 0
-    margin: 0 auto
+    margin: 20px auto
     width: 98%
-    min-height: calc(100vh - 482px)
+    max-width: 320px
+    min-height: calc(100vh - 573px)
     @include maxh(768)
-      min-height: calc(100vh - 432px)
+      min-height: calc(100vh - 523px)
 
     .development, .music, .tech, .volley
       background-color: $transparent8
       border-radius: 8px
-      width: 24%
+      width: 100%
       min-width: 242px
-      height: 57px
+      margin: 5px
 
       h4
         font-size: 1.5em
         margin: 15px
 
-      ul
-        display: grid
-        list-style: none
-        height: 0
-        padding: 0
-        margin: auto
-        opacity: 0
-
-        li
-          opacity: 0
-          animation:
-            name: opacity0
-            duration: 200ms
-            timing-function: ease-in
-            fill-mode: forwards
-          background-color: $transparent8
-          display: none
-          padding: 7px
-          &:nth-last-child(1)
-            border-bottom-right-radius: 8px
-            border-bottom-left-radius: 8px
-
-      &:hover
-        transition: all 200ms linear
-        border-bottom-right-radius: 0
-        border-bottom-left-radius: 0
-        ul
-          opacity: 1
-          li
-            display: block
-            opacity: 1
-            animation:
-              name: opacity1
-              duration: 200ms
-              timing-function: ease-in
-              fill-mode: forwards
-
-
-    @include maxw(1022)
-      justify-content: space-between
-
-      .development, .music, .tech, .volley
-        width: 40%
-
-        ul
-          display: none
-
   @include credits-popup
-
-@keyframes opacity1
-  0%
-    opacity: 0
-  100%
-    opacity: 1
-
-@keyframes opacity0
-  0%
-    opacity: 1
-  100%
-    opacity: 0

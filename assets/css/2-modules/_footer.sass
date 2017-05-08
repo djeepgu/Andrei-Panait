@@ -25,7 +25,6 @@
       justify-content: flex-start
       padding: 0
       margin: 0
-      //margin: 0
       list-style: none
       a
         .github, .linkedin, .soundcloud, .mixcloud, .spotify
@@ -45,9 +44,17 @@
                 fill: $rebecca
               polygon
                 fill: $rebecca
-            p
+          //  p
               display: inline-block
               color: $rebecca
+
+      @include maxw(1022)
+        justify-content: space-around
+        a
+          .github, .linkedin, .soundcloud, .mixcloud, .spotify
+            &:hover
+              p
+                display: none
 
   .credits
     cursor: pointer

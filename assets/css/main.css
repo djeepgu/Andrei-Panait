@@ -450,15 +450,35 @@ template {
     -webkit-transform: translate(-50%, -40px);
             transform: translate(-50%, -40px); } }
 
+@-webkit-keyframes opacity1 {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes opacity1 {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes opacity0 {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes opacity0 {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 html {
   font-family: 'Josefin Sans';
   -webkit-font-smoothing: antialiased;
   background-color: white;
   color: #663399; }
-  html ::-webkit-scrollbar {
-    display: none; }
-  html .page-wrap {
-    height: 100vh; }
 
 a {
   color: #663399; }
@@ -468,12 +488,20 @@ a {
 #home-page {
   background: url("/assets/img/homeBack1920.jpg") no-repeat center center fixed;
   background-size: cover; }
+  @media (max-width: 80em) {
+    #home-page {
+      background: url("/assets/img/homeBack1280.jpg") no-repeat center center fixed;
+      background-size: cover; } }
+  @media (max-width: 64em) {
+    #home-page {
+      background: url("/assets/img/homeBack1024.jpg") no-repeat center center fixed;
+      background-size: cover; } }
   #home-page .hero {
     position: relative;
-    height: 450px; }
+    min-height: 450px; }
     #home-page .hero .personal-details {
       position: relative;
-      top: 50px; }
+      margin-top: 50px; }
       #home-page .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
@@ -486,132 +514,96 @@ a {
         -webkit-border-radius: 8px;
                 border-radius: 8px;
         width: 98%;
+        max-width: 960px;
         margin: auto;
         line-height: 1.3;
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #home-page .hero .personal-details .description .container {
-          width: 50%;
-          max-width: 640px;
+          padding: 20px;
           margin: auto; }
           #home-page .hero .personal-details .description .container h3 {
             margin: 0;
-            letter-spacing: 1.8px;
-            padding: 20px 0; }
+            letter-spacing: 1.8px; }
           #home-page .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
     @media (max-width: 80em) {
-      #home-page .hero .personal-details {
-        top: 30px; }
+      #home-page .hero .personal-details .my-head {
+        height: 160px;
+        width: 160px;
+        margin-bottom: 25px; }
+      #home-page .hero .personal-details .description .container {
+        width: 90%;
+        max-width: 960px; } }
+    @media (max-height: 48em) {
+      #home-page .hero {
+        min-height: 400px; }
         #home-page .hero .personal-details .my-head {
           height: 160px;
           width: 160px;
           margin-bottom: 25px; }
         #home-page .hero .personal-details .description .container {
-          width: 90%;
+          width: 50%;
           max-width: 960px; } }
-    @media (max-height: 48em) {
-      #home-page .hero {
-        height: 400px; } }
     #home-page .hero .personal-details .my-head {
       background: url("/assets/img/headLand.jpg") no-repeat center center;
       background-size: cover;
       opacity: 0.7; }
+    #home-page .hero .name {
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 98%;
+      max-width: 960px;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+      padding: 10px 0; }
+      #home-page .hero .name h1 {
+        margin: 0; }
   #home-page .sections {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     padding: 0;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 98%;
-    min-height: -webkit-calc(100vh - 482px);
-    min-height: calc(100vh - 482px); }
+    max-width: 320px;
+    min-height: -webkit-calc(100vh - 573px);
+    min-height: calc(100vh - 573px); }
     @media (max-height: 48em) {
       #home-page .sections {
-        min-height: -webkit-calc(100vh - 432px);
-        min-height: calc(100vh - 432px); } }
+        min-height: -webkit-calc(100vh - 523px);
+        min-height: calc(100vh - 523px); } }
     #home-page .sections .development, #home-page .sections .music, #home-page .sections .tech, #home-page .sections .volley {
       background-color: rgba(255, 255, 255, 0.8);
       -webkit-border-radius: 8px;
               border-radius: 8px;
-      width: 24%;
+      width: 100%;
       min-width: 242px;
-      height: 57px; }
+      margin: 5px; }
       #home-page .sections .development h4, #home-page .sections .music h4, #home-page .sections .tech h4, #home-page .sections .volley h4 {
         font-size: 1.5em;
         margin: 15px; }
-      #home-page .sections .development ul, #home-page .sections .music ul, #home-page .sections .tech ul, #home-page .sections .volley ul {
-        display: -ms-grid;
-        display: grid;
-        list-style: none;
-        height: 0;
-        padding: 0;
-        margin: auto;
-        opacity: 0; }
-        #home-page .sections .development ul li, #home-page .sections .music ul li, #home-page .sections .tech ul li, #home-page .sections .volley ul li {
-          opacity: 0;
-          -webkit-animation-name: opacity0;
-                  animation-name: opacity0;
-          -webkit-animation-duration: 200ms;
-                  animation-duration: 200ms;
-          -webkit-animation-timing-function: ease-in;
-                  animation-timing-function: ease-in;
-          -webkit-animation-fill-mode: forwards;
-                  animation-fill-mode: forwards;
-          background-color: rgba(255, 255, 255, 0.8);
-          display: none;
-          padding: 7px; }
-          #home-page .sections .development ul li:nth-last-child(1), #home-page .sections .music ul li:nth-last-child(1), #home-page .sections .tech ul li:nth-last-child(1), #home-page .sections .volley ul li:nth-last-child(1) {
-            -webkit-border-bottom-right-radius: 8px;
-                    border-bottom-right-radius: 8px;
-            -webkit-border-bottom-left-radius: 8px;
-                    border-bottom-left-radius: 8px; }
-      #home-page .sections .development:hover, #home-page .sections .music:hover, #home-page .sections .tech:hover, #home-page .sections .volley:hover {
-        -webkit-transition: all 200ms linear;
-        transition: all 200ms linear;
-        -webkit-border-bottom-right-radius: 0;
-                border-bottom-right-radius: 0;
-        -webkit-border-bottom-left-radius: 0;
-                border-bottom-left-radius: 0; }
-        #home-page .sections .development:hover ul, #home-page .sections .music:hover ul, #home-page .sections .tech:hover ul, #home-page .sections .volley:hover ul {
-          opacity: 1; }
-          #home-page .sections .development:hover ul li, #home-page .sections .music:hover ul li, #home-page .sections .tech:hover ul li, #home-page .sections .volley:hover ul li {
-            display: block;
-            opacity: 1;
-            -webkit-animation-name: opacity1;
-                    animation-name: opacity1;
-            -webkit-animation-duration: 200ms;
-                    animation-duration: 200ms;
-            -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in;
-            -webkit-animation-fill-mode: forwards;
-                    animation-fill-mode: forwards; }
-    @media (max-width: 63.875em) {
-      #home-page .sections {
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
-        #home-page .sections .development, #home-page .sections .music, #home-page .sections .tech, #home-page .sections .volley {
-          width: 40%; }
-          #home-page .sections .development ul, #home-page .sections .music ul, #home-page .sections .tech ul, #home-page .sections .volley ul {
-            display: none; } }
   #home-page .credits-popup {
     position: fixed;
     bottom: 40px;
@@ -644,30 +636,6 @@ a {
     -webkit-animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
             animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
     pointer-events: none; }
-
-@-webkit-keyframes opacity1 {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes opacity1 {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@-webkit-keyframes opacity0 {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes opacity0 {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
 
 .nav {
   font-weight: bold;
@@ -760,10 +728,10 @@ a {
     position: relative; }
   #developer .hero {
     position: relative;
-    height: 450px; }
+    min-height: 450px; }
     #developer .hero .personal-details {
       position: relative;
-      top: 50px; }
+      margin-top: 50px; }
       #developer .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
@@ -776,34 +744,38 @@ a {
         -webkit-border-radius: 8px;
                 border-radius: 8px;
         width: 98%;
+        max-width: 960px;
         margin: auto;
         line-height: 1.3;
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #developer .hero .personal-details .description .container {
-          width: 50%;
-          max-width: 640px;
+          padding: 20px;
           margin: auto; }
           #developer .hero .personal-details .description .container h3 {
             margin: 0;
-            letter-spacing: 1.8px;
-            padding: 20px 0; }
+            letter-spacing: 1.8px; }
           #developer .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
     @media (max-width: 80em) {
-      #developer .hero .personal-details {
-        top: 30px; }
+      #developer .hero .personal-details .my-head {
+        height: 160px;
+        width: 160px;
+        margin-bottom: 25px; }
+      #developer .hero .personal-details .description .container {
+        width: 90%;
+        max-width: 960px; } }
+    @media (max-height: 48em) {
+      #developer .hero {
+        min-height: 400px; }
         #developer .hero .personal-details .my-head {
           height: 160px;
           width: 160px;
           margin-bottom: 25px; }
         #developer .hero .personal-details .description .container {
-          width: 90%;
+          width: 50%;
           max-width: 960px; } }
-    @media (max-height: 48em) {
-      #developer .hero {
-        height: 400px; } }
     #developer .hero .personal-details .my-head {
       background: url("/assets/img/headDev.jpg") no-repeat center center;
       background-size: cover; }
@@ -861,10 +833,10 @@ a {
   background-size: cover; }
   #music .hero {
     position: relative;
-    height: 450px; }
+    min-height: 450px; }
     #music .hero .personal-details {
       position: relative;
-      top: 50px; }
+      margin-top: 50px; }
       #music .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
@@ -877,48 +849,53 @@ a {
         -webkit-border-radius: 8px;
                 border-radius: 8px;
         width: 98%;
+        max-width: 960px;
         margin: auto;
         line-height: 1.3;
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #music .hero .personal-details .description .container {
-          width: 50%;
-          max-width: 640px;
+          padding: 20px;
           margin: auto; }
           #music .hero .personal-details .description .container h3 {
             margin: 0;
-            letter-spacing: 1.8px;
-            padding: 20px 0; }
+            letter-spacing: 1.8px; }
           #music .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
     @media (max-width: 80em) {
-      #music .hero .personal-details {
-        top: 30px; }
+      #music .hero .personal-details .my-head {
+        height: 160px;
+        width: 160px;
+        margin-bottom: 25px; }
+      #music .hero .personal-details .description .container {
+        width: 90%;
+        max-width: 960px; } }
+    @media (max-height: 48em) {
+      #music .hero {
+        min-height: 400px; }
         #music .hero .personal-details .my-head {
           height: 160px;
           width: 160px;
           margin-bottom: 25px; }
         #music .hero .personal-details .description .container {
-          width: 90%;
+          width: 50%;
           max-width: 960px; } }
-    @media (max-height: 48em) {
-      #music .hero {
-        height: 400px; } }
     #music .hero .personal-details .my-head {
       background: url("/assets/img/headMusic1.jpg") no-repeat center center;
       background-size: cover; }
   #music .embedded-platforms {
     position: relative;
-    max-width: 98%;
-    margin: 50px auto 10px auto;
-    min-height: -webkit-calc(100vh - 542px);
-    min-height: calc(100vh - 542px);
+    width: 98%;
+    max-width: 960px;
+    margin: 0 auto 10px auto;
+    min-height: -webkit-calc(100vh - 553px);
+    min-height: calc(100vh - 553px);
     margin-bottom: 10px;
     -webkit-transition: max-width 300ms ease-in;
     transition: max-width 300ms ease-in; }
     #music .embedded-platforms .soundcloud, #music .embedded-platforms .mixcloud, #music .embedded-platforms .spotify {
-      max-width: 40%;
+      max-width: 100%;
       -webkit-transition: max-width 300ms ease-in;
       transition: max-width 300ms ease-in;
       margin: 0 auto;
@@ -959,7 +936,7 @@ a {
       #music .embedded-platforms .soundcloud .open-content, #music .embedded-platforms .mixcloud .open-content, #music .embedded-platforms .spotify .open-content {
         -webkit-transition: max-height 300ms ease-in;
         transition: max-height 300ms ease-in;
-        max-height: 1000px; }
+        max-height: 2000px; }
         #music .embedded-platforms .soundcloud .open-content iframe, #music .embedded-platforms .mixcloud .open-content iframe, #music .embedded-platforms .spotify .open-content iframe {
           display: block; }
       #music .embedded-platforms .soundcloud .show-content, #music .embedded-platforms .mixcloud .show-content, #music .embedded-platforms .spotify .show-content {
@@ -1007,7 +984,17 @@ a {
         transition: transform 250ms ease-in;
         transition: transform 250ms ease-in, -webkit-transform 250ms ease-in; }
     #music .embedded-platforms .mixcloud iframe {
-      min-width: 500px; }
+      width: 98%;
+      height: 200px; }
+      #music .embedded-platforms .mixcloud iframe:nth-last-child(1) {
+        width: 350px;
+        height: 250px; }
+    #music .embedded-platforms .spotify iframe {
+      width: 98%;
+      height: 450px; }
+    #music .embedded-platforms .soundcloud iframe {
+      width: 450px;
+      height: 450px; }
   #music .credits-popup {
     position: fixed;
     bottom: 40px;
@@ -1046,10 +1033,10 @@ a {
   background-size: cover; }
   #science .hero {
     position: relative;
-    height: 450px; }
+    min-height: 450px; }
     #science .hero .personal-details {
       position: relative;
-      top: 50px; }
+      margin-top: 50px; }
       #science .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
@@ -1062,43 +1049,48 @@ a {
         -webkit-border-radius: 8px;
                 border-radius: 8px;
         width: 98%;
+        max-width: 960px;
         margin: auto;
         line-height: 1.3;
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #science .hero .personal-details .description .container {
-          width: 50%;
-          max-width: 640px;
+          padding: 20px;
           margin: auto; }
           #science .hero .personal-details .description .container h3 {
             margin: 0;
-            letter-spacing: 1.8px;
-            padding: 20px 0; }
+            letter-spacing: 1.8px; }
           #science .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
     @media (max-width: 80em) {
-      #science .hero .personal-details {
-        top: 30px; }
+      #science .hero .personal-details .my-head {
+        height: 160px;
+        width: 160px;
+        margin-bottom: 25px; }
+      #science .hero .personal-details .description .container {
+        width: 90%;
+        max-width: 960px; } }
+    @media (max-height: 48em) {
+      #science .hero {
+        min-height: 400px; }
         #science .hero .personal-details .my-head {
           height: 160px;
           width: 160px;
           margin-bottom: 25px; }
         #science .hero .personal-details .description .container {
-          width: 90%;
+          width: 50%;
           max-width: 960px; } }
-    @media (max-height: 48em) {
-      #science .hero {
-        height: 400px; } }
     #science .hero .personal-details .my-head {
       background: url("/assets/img/pillarsOfCreation.jpg") no-repeat center center;
       background-size: cover; }
   #science .inspiration {
     width: 98%;
+    max-width: 960px;
     margin: 0 auto 10px auto; }
     #science .inspiration h2 {
       padding: 10px;
-      margin: 50px auto 20px auto;
+      margin: 10px auto;
       -webkit-border-radius: 8px;
               border-radius: 8px;
       background-color: rgba(255, 255, 255, 0.8);
@@ -1137,16 +1129,8 @@ a {
           margin: 0 auto;
           -webkit-border-radius: 100%;
                   border-radius: 100%;
-          height: 200px;
-          width: 200px; }
-          @media (max-width: 80em) {
-            #science .inspiration .container .tyson .pic, #science .inspiration .container .sagan .pic, #science .inspiration .container .feynman .pic, #science .inspiration .container .elon .pic, #science .inspiration .container .jobs .pic {
-              height: 150px;
-              width: 150px; } }
-          @media (max-width: 64em) {
-            #science .inspiration .container .tyson .pic, #science .inspiration .container .sagan .pic, #science .inspiration .container .feynman .pic, #science .inspiration .container .elon .pic, #science .inspiration .container .jobs .pic {
-              height: 100px;
-              width: 100px; } }
+          height: 150px;
+          width: 150px; }
   #science .sources {
     background-color: rgba(255, 255, 255, 0.8);
     width: 98%;
@@ -1155,57 +1139,75 @@ a {
     margin: 0 auto;
     text-align: center;
     padding: 10px 0;
-    max-width: 98%;
-    margin: 50px auto 20px auto; }
+    width: 98%;
+    max-width: 960px;
+    margin: 50px auto 10px auto; }
   #science .rss-feeds {
     position: relative;
     width: 98%;
-    -webkit-border-radius: 8px;
-            border-radius: 8px;
-    margin: 0 auto;
-    max-height: -webkit-calc(65vh - 96px);
-    max-height: calc(65vh - 96px);
-    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto 20px auto;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 50px; }
+            justify-content: space-between; }
     #science .rss-feeds .rss2html-note {
       display: none; }
     #science .rss-feeds .nasa, #science .rss-feeds .wired, #science .rss-feeds .guardian {
-      width: 33%;
+      background-color: rgba(255, 255, 255, 0.8);
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+      width: 100%;
+      height: 760px;
       overflow: scroll;
       font-size: 1em;
-      padding: 20px;
+      margin-bottom: 10px;
+      text-align: center;
       color: black; }
-      #science .rss-feeds .nasa iframe, #science .rss-feeds .wired iframe, #science .rss-feeds .guardian iframe {
-        width: 100%;
-        min-height: 320px; }
-      #science .rss-feeds .nasa img, #science .rss-feeds .wired img, #science .rss-feeds .guardian img {
-        max-width: 100%; }
       #science .rss-feeds .nasa .title, #science .rss-feeds .wired .title, #science .rss-feeds .guardian .title {
+        display: block;
         color: #663399;
         text-align: center;
-        margin: 0;
+        margin: 10px;
         border-bottom: 1px solid white; }
       #science .rss-feeds .nasa .description, #science .rss-feeds .wired .description, #science .rss-feeds .guardian .description {
         text-align: center;
         margin: 10px 0 40px 0; }
       #science .rss-feeds .nasa p, #science .rss-feeds .wired p, #science .rss-feeds .guardian p {
-        color: black; }
+        color: black;
+        padding: 0 20px; }
       #science .rss-feeds .nasa .feed-item-title, #science .rss-feeds .wired .feed-item-title, #science .rss-feeds .guardian .feed-item-title {
         font-size: 20px; }
+    #science .rss-feeds .nasa {
+      overflow: hidden; }
+      #science .rss-feeds .nasa iframe {
+        width: 940px;
+        height: 640px; }
+    #science .rss-feeds .wired {
+      overflow: scroll; }
+      #science .rss-feeds .wired .feed-item-title {
+        text-align: center; }
+      #science .rss-feeds .wired .feed-item-desc {
+        text-align: center; }
+      #science .rss-feeds .wired .rss_thumbnail {
+        text-align: center; }
+        #science .rss-feeds .wired .rss_thumbnail img {
+          max-width: 100%;
+          display: block;
+          margin: auto; }
     #science .rss-feeds .guardian > a {
       border-bottom: 1px solid white; }
   #science .credits-popup {
@@ -1246,10 +1248,10 @@ a {
   background-size: cover; }
   #volley .hero {
     position: relative;
-    height: 450px; }
+    min-height: 450px; }
     #volley .hero .personal-details {
       position: relative;
-      top: 50px; }
+      margin-top: 50px; }
       #volley .hero .personal-details .my-head {
         opacity: 1;
         margin: 0 auto;
@@ -1262,43 +1264,46 @@ a {
         -webkit-border-radius: 8px;
                 border-radius: 8px;
         width: 98%;
+        max-width: 960px;
         margin: auto;
         line-height: 1.3;
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center; }
         #volley .hero .personal-details .description .container {
-          width: 50%;
-          max-width: 640px;
+          padding: 20px;
           margin: auto; }
           #volley .hero .personal-details .description .container h3 {
             margin: 0;
-            letter-spacing: 1.8px;
-            padding: 20px 0; }
+            letter-spacing: 1.8px; }
           #volley .hero .personal-details .description .container h1 {
             letter-spacing: 1.8px;
             padding: 20px 0; }
     @media (max-width: 80em) {
-      #volley .hero .personal-details {
-        top: 30px; }
+      #volley .hero .personal-details .my-head {
+        height: 160px;
+        width: 160px;
+        margin-bottom: 25px; }
+      #volley .hero .personal-details .description .container {
+        width: 90%;
+        max-width: 960px; } }
+    @media (max-height: 48em) {
+      #volley .hero {
+        min-height: 400px; }
         #volley .hero .personal-details .my-head {
           height: 160px;
           width: 160px;
           margin-bottom: 25px; }
         #volley .hero .personal-details .description .container {
-          width: 90%;
+          width: 50%;
           max-width: 960px; } }
-    @media (max-height: 48em) {
-      #volley .hero {
-        height: 400px; } }
     #volley .hero .personal-details {
-      max-width: 800px;
       margin: 0 auto; }
       #volley .hero .personal-details .my-head {
         background: url("/assets/img/spuyt.png") no-repeat center center;
         background-size: cover;
         opacity: 1; }
   #volley .spuyt, #volley .competitions {
-    max-width: 800px;
+    max-width: 960px;
     background-color: rgba(255, 255, 255, 0.8);
     width: 98%;
     -webkit-border-radius: 8px;
@@ -1310,10 +1315,8 @@ a {
       padding: 20px;
       margin: 0; }
   #volley .history {
-    margin: auto;
-    max-width: 640px; }
+    margin: auto; }
   #volley .competitions .container p {
-    max-width: 640px;
     margin: 0 auto;
     padding-top: 0; }
   #volley .credits-popup {
@@ -1412,9 +1415,13 @@ a {
         fill: #663399; }
       .footer .platforms ul a .github:hover svg polygon, .footer .platforms ul a .linkedin:hover svg polygon, .footer .platforms ul a .soundcloud:hover svg polygon, .footer .platforms ul a .mixcloud:hover svg polygon, .footer .platforms ul a .spotify:hover svg polygon {
         fill: #663399; }
-      .footer .platforms ul a .github:hover p, .footer .platforms ul a .linkedin:hover p, .footer .platforms ul a .soundcloud:hover p, .footer .platforms ul a .mixcloud:hover p, .footer .platforms ul a .spotify:hover p {
-        display: inline-block;
-        color: #663399; }
+    @media (max-width: 63.875em) {
+      .footer .platforms ul {
+        -webkit-justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around; }
+        .footer .platforms ul a .github:hover p, .footer .platforms ul a .linkedin:hover p, .footer .platforms ul a .soundcloud:hover p, .footer .platforms ul a .mixcloud:hover p, .footer .platforms ul a .spotify:hover p {
+          display: none; } }
   .footer .credits {
     cursor: pointer; }
     .footer .credits a, .footer .credits p {

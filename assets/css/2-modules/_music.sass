@@ -10,14 +10,15 @@
 
   .embedded-platforms
     position: relative
-    max-width: 98%
-    margin: 50px auto 10px auto
-    min-height: calc(100vh - 542px)
+    width: 98%
+    max-width: 960px
+    margin: 0 auto 10px auto
+    min-height: calc(100vh - 553px)
     margin-bottom: 10px
     transition: max-width 300ms ease-in
 
     .soundcloud, .mixcloud, .spotify
-      max-width: 40%
+      max-width: 100%
       transition: max-width 300ms ease-in
       margin: 0 auto
       background-color: $transparent8
@@ -43,7 +44,7 @@
 
       .open-content
         transition: max-height 300ms ease-in
-        max-height: 1000px
+        max-height: 2000px
         iframe
           display: block
 
@@ -89,10 +90,20 @@
 
     .mixcloud
       iframe
-        min-width: 500px
+        width: 98%
+        height: 200px
+        &:nth-last-child(1)
+          width: 350px
+          height: 250px
 
-  //.ep-large
-    max-width: 98%
-    transition: max-width 500ms ease-in
+    .spotify
+      iframe
+        width: 98%
+        height: 450px
+
+    .soundcloud
+      iframe
+        width: 450px
+        height: 450px
 
   @include credits-popup
