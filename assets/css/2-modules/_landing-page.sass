@@ -15,20 +15,22 @@
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    text-align: center
+    //align-items: center
     justify-content: space-between
+    text-align: center
     padding: 0
     margin: 0 auto
-    min-height: calc(100vh - 482px)
     width: 98%
+    min-height: calc(100vh - 482px)
+    @include maxh(768)
+      min-height: calc(100vh - 432px)
+
     .development, .music, .tech, .volley
       background-color: $transparent8
       border-radius: 8px
       width: 24%
       min-width: 242px
       height: 57px
-
-
 
       h4
         font-size: 1.5em
@@ -71,16 +73,26 @@
               timing-function: ease-in
               fill-mode: forwards
 
-          @keyframes opacity1
-            0%
-              opacity: 0
-            100%
-              opacity: 1
 
-          @keyframes opacity0
-            0%
-              opacity: 1
-            100%
-              opacity: 0
+    @include maxw(1022)
+      justify-content: space-between
+
+      .development, .music, .tech, .volley
+        width: 40%
+
+        ul
+          display: none
 
   @include credits-popup
+
+@keyframes opacity1
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes opacity0
+  0%
+    opacity: 1
+  100%
+    opacity: 0

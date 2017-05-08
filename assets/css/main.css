@@ -511,6 +511,9 @@ a {
         #home-page .hero .personal-details .description .container {
           width: 90%;
           max-width: 960px; } }
+    @media (max-height: 48em) {
+      #home-page .hero {
+        height: 400px; } }
     #home-page .hero .personal-details .my-head {
       background: url("/assets/img/headLand.jpg") no-repeat center center;
       background-size: cover;
@@ -529,16 +532,20 @@ a {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    text-align: center;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    text-align: center;
     padding: 0;
     margin: 0 auto;
+    width: 98%;
     min-height: -webkit-calc(100vh - 482px);
-    min-height: calc(100vh - 482px);
-    width: 98%; }
+    min-height: calc(100vh - 482px); }
+    @media (max-height: 48em) {
+      #home-page .sections {
+        min-height: -webkit-calc(100vh - 432px);
+        min-height: calc(100vh - 432px); } }
     #home-page .sections .development, #home-page .sections .music, #home-page .sections .tech, #home-page .sections .volley {
       background-color: rgba(255, 255, 255, 0.8);
       -webkit-border-radius: 8px;
@@ -595,30 +602,16 @@ a {
                     animation-timing-function: ease-in;
             -webkit-animation-fill-mode: forwards;
                     animation-fill-mode: forwards; }
-
-@-webkit-keyframes opacity1 {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes opacity1 {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@-webkit-keyframes opacity0 {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes opacity0 {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
+    @media (max-width: 63.875em) {
+      #home-page .sections {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        #home-page .sections .development, #home-page .sections .music, #home-page .sections .tech, #home-page .sections .volley {
+          width: 40%; }
+          #home-page .sections .development ul, #home-page .sections .music ul, #home-page .sections .tech ul, #home-page .sections .volley ul {
+            display: none; } }
   #home-page .credits-popup {
     position: fixed;
     bottom: 40px;
@@ -651,6 +644,30 @@ a {
     -webkit-animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
             animation-timing-function: cubic-bezier(0.51, -0.8, 0.17, 0.97);
     pointer-events: none; }
+
+@-webkit-keyframes opacity1 {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes opacity1 {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes opacity0 {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes opacity0 {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 .nav {
   font-weight: bold;
@@ -784,6 +801,9 @@ a {
         #developer .hero .personal-details .description .container {
           width: 90%;
           max-width: 960px; } }
+    @media (max-height: 48em) {
+      #developer .hero {
+        height: 400px; } }
     #developer .hero .personal-details .my-head {
       background: url("/assets/img/headDev.jpg") no-repeat center center;
       background-size: cover; }
@@ -882,6 +902,9 @@ a {
         #music .hero .personal-details .description .container {
           width: 90%;
           max-width: 960px; } }
+    @media (max-height: 48em) {
+      #music .hero {
+        height: 400px; } }
     #music .hero .personal-details .my-head {
       background: url("/assets/img/headMusic1.jpg") no-repeat center center;
       background-size: cover; }
@@ -1064,6 +1087,9 @@ a {
         #science .hero .personal-details .description .container {
           width: 90%;
           max-width: 960px; } }
+    @media (max-height: 48em) {
+      #science .hero {
+        height: 400px; } }
     #science .hero .personal-details .my-head {
       background: url("/assets/img/pillarsOfCreation.jpg") no-repeat center center;
       background-size: cover; }
@@ -1261,6 +1287,9 @@ a {
         #volley .hero .personal-details .description .container {
           width: 90%;
           max-width: 960px; } }
+    @media (max-height: 48em) {
+      #volley .hero {
+        height: 400px; } }
     #volley .hero .personal-details {
       max-width: 800px;
       margin: 0 auto; }

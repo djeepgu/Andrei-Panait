@@ -10,6 +10,12 @@
   @media (max-width: $pixels/16+em)
     @content
 
+// Maximum Height
+
+@mixin maxh($pixels)
+  @media (max-height: $pixels/16+em)
+    @content
+
 // Hero
 
 @mixin hero
@@ -24,7 +30,7 @@
       +size(200px)
       border-radius: 100%
       margin-bottom: 50px
-      
+
     .description
       border-radius: 8px
       width: 98%
@@ -53,6 +59,12 @@
         .container
           width: 90%
           max-width: 960px
+
+  @include maxh(768)
+    height: 400px
+
+
+
 
 @mixin credits-popup
   .credits-popup
